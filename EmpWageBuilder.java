@@ -8,20 +8,22 @@ public class EmpWageBuilder{
 		int no_of_hours = 8;
 		int no_of_part_time_hour = 4;
 		//computation
-		double empCheck = Math.floor(Math.random() * 10) % 3;
-		if (empCheck == is_Full_Time){
+		int empCheck =(int) (Math.floor(Math.random() * 10) % 3);
+		switch (empCheck){
+		case 0:
 			System.out.println("Employee is present ");
 			int Payment = Wage_per_hour * no_of_hours;
 			System.out.println("Payment is: "+ Payment);
-		}
-		else if (empCheck == is_Part_Time){
+			break;
+		case 1:
 			System.out.println("Employee is part time");
-			int Payment = Wage_per_hour * no_of_part_time_hour;
-			System.out.println("Part time Payment is: "+ Payment);
-		}
-		else{
+			int Payments = Wage_per_hour * no_of_part_time_hour;
+			System.out.println("Part time Payment is: "+ Payments);
+			break;
+		case 2:
 			System.out.println("Employee is Abscent");
 			System.out.println("Payment is 0");
+			break;
 		}
 	}
 }
